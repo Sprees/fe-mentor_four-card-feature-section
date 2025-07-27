@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor Solution Page](https://www.frontendmentor.io/solutions/four-card-feature-section-css-grid-cube-css-bem-css-variables-4WxXJ8zxIj)
+- Live Site URL: [Github Pages Live Site](https://sprees.github.io/fe-mentor_four-card-feature-section/)
 
 ## My process
 
