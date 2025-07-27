@@ -130,11 +130,15 @@
 
         background-color: var(--clr-background);
     }
+
+    main {
+        min-height: inherit;
+    }
     
     section {
         padding-block: 4rem;
-        @media (min-width: 48rem) {
-            padding-block: 6.5rem;
+        @media (min-width: 48em) {
+            padding-block: 0;
         }
     }
     
@@ -216,6 +220,7 @@
         place-content: center;
 
         &[data-type="content"] {
+            --grid-gap: 2rem;
             grid-template-columns: 19.625rem;
 
             @media (min-width: 48em) {
