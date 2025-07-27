@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'Poppins Semibold';
+    src: url('./assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('./assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins Extra Light';
+    src: url('./assets/fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer reset {
+    /* -------------------------------------------------- */
+    /* https://www.joshwcomeau.com/css/custom-css-reset/  */
+    /* -------------------------------------------------- */
+
+    /* 1. Use a more-intuitive box-sizing model */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    /* 2. Remove default margin */
+    * {
+        margin: 0;
+    }
+    /* 3. Enable keyword animations */
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            interpolate-size: allow-keywords;
+        }
+    }
+    body {
+        /* 4. Add accessible line-height */
+        line-height: 1.5;
+        min-height: 100vh;
+        /* 5. Improve text rendering */
+        -webkit-font-smoothing: antialiased;
+    }
+    /* 6. Improve media defaults */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+    /* 7. Inherit fonts for form controls */
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+    /* 8. Avoid text overflows */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: balance;
+    }
+}
+
+@layer base {
+    :root {
+        /* colors */
+        --clr-red: hsl(0, 78%, 62%);
+        --clr-cyan: hsl(180, 62%, 55%);
+        --clr-orange: hsl(34, 97%, 64%);
+        --clr-blue: hsl(212, 86%, 64%);
+
+        --clr-neutral-400: hsl(212, 6%, 44%);
+        --clr-neutral-500: hsl(234, 12%, 34%);
+        --clr-white: hsl(0, 0%, 100%);
+
+        --clr-attribution: hsl(228, 45%, 44%);
+
+        /* mobile font sizes */
+        --fs-300: 0.8125rem; /* 13px */
+        --fs-400: 0.9375rem; /* 15px */
+        --fs-700: 1.25rem; /* 20px */
+        --fs-900: 1.5rem; /* 24px */
+
+        --fs-attribution: 0.6875rem; /* 11px */
+
+        /* temporary min-width */
+        @media (min-width: 47.9999em) {
+            --fs-900: 2.25rem; /* 36px */
+        }
+    }
+
+    h1, h2 {
+        font-family: "Poppins Semibold", sans-serif;
+        color: var(--clr-neutral-500);
+    }
+
+    body {
+        position: relative;
+        font-family: "Poppins Regular", sans-serif;
+        font-size: var(--fs-300);
+        color: var(--clr-neutral-400);
+    }
+    
+    section {
+        padding-block: 3rem;
+        @media (min-width: 48rem) {
+            padding-block: 4rem;
+        }
+    }
+    
+    header {
+        margin: 0 auto;
+        max-width: 33.75rem;
+        text-align: center;
+        display: grid;
+        gap: 1rem;
+        line-height: 1.4;
+        letter-spacing: 0.25px;
+
+        @media (max-width: 48em) {
+            width: clamp(19.625rem, 70vw, 24rem);
+        }
+    }
+}
+
+@layer components {
+    .ai-tools__title {
+        font-size: var(--fs-900);
+        & span {
+            font-family: "Poppins Extra Light", sans-serif;
+            color: var(--clr-neutral-400);
+        }
+    }
+
+    .ai-tools__description {
+        color: var(--clr-neutral-500);
+        letter-spacing: 0.1px;
+        font-size: var(--fs-400);
+    }
+
+    .feature-card {
+        position: relative;
+        line-height: 1.6;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 15px 30px -11px #83a6d280;
+        overflow: hidden;
+    }
+
+    .feature-card__border {
+        position: absolute;
+        top: 0; left: 0;
+        height: 0.25rem;
+        width: 100%;
+    }
+
+    .feature-card__title {
+        margin-bottom: 0.375rem;
+        line-height: 1.35;
+        font-size: var(--fs-700);
+    }
+
+    .feature-card__img {
+        align-self: flex-end;
+    }
+
+    .attribution {
+        width: 100%;
+        position: absolute;
+        bottom: 0.5rem; left: 50%;
+        transform: translateX(-50%);
+        font-size: var(--fs-attribution);
+        text-align: center;
+        & a {
+            color: var(--clr-attribution);
+        }
+    }
+}
+
+@layer utilities {
+    .grid {
+        display: grid;
+        gap: var(--grid-gap, 3.75rem);
+        place-content: center;
+
+        &[data-type="content"] {
+            grid-template-columns: 19.625rem;
+
+            @media (min-width: 48em) {
+                grid-template-columns: repeat(4, 9.8125rem);
+                grid-template-areas: 
+                ". cyan cyan ."
+                "red red orange orange"
+                ". blue blue .";
+
+                & > article:has(> div.bg-cyan) {
+                    grid-area: cyan;
+                }
+            
+                & > article:has(> div.bg-red) {
+                    grid-area: red;
+                }
+            
+                & > article:has(> div.bg-orange) {
+                    grid-area: orange;
+                }
+            
+                & > article:has(> div.bg-blue) {
+                    grid-area: blue;
+                }
+            }
+
+            @media (min-width: 73em) {
+                grid-template-columns: repeat(3, 350px);
+                grid-template-areas: 
+                ". red ."
+                "cyan red blue"
+                "cyan orange blue"
+                ". orange .";
+            }
+        }
+    }
+
+    .flex {
+        display: flex;
+        gap: var(--flex-gap, 2rem);
+        &[data-direction="column"] {
+            flex-direction: column;
+            align-items: start;
+        }
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .bg-cyan {
+        background-color: var(--clr-cyan);
+    }
+
+    .bg-red {
+        background-color: var(--clr-red);
+    }
+
+    .bg-orange {
+        background-color: var(--clr-orange);
+    }
+
+    .bg-blue {
+        background-color: var(--clr-blue);
+    }
+
+    .visually-hidden:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+}

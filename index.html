@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link
+            rel="stylesheet"
+            href="style.css"
+        />
+        <title>Frontend Mentor | Four card feature section</title>
+    </head>
+    <body>
+        <main clas="grid">
+            <section class="grid" data-type="page" aria-labelledby="ai-tools__title">
+
+                <header>
+                    <h1 id="ai-tools__title" class="ai-tools__title">
+                        <span class="d-block"
+                            >Reliable, efficient delivery</span
+                        >
+                        Powered by Technology
+                    </h1>
+
+                    <p class="ai-tools__description">
+                        Our Artificial Intelligence powered tools use millions
+                        of project data points to ensure that your project is
+                        successful
+                    </p>
+                </header>
+
+                <div class="grid" data-type="content" style="--grid-gap: 2rem;">
+                    <article class="feature-card flex" data-direction="column">
+                        <div class="feature-card__border bg-cyan"></div>
+                        <div>
+                            <h2 class="feature-card__title">Supervisor</h2>
+                            <p>Monitors activity to identify project roadblocks</p>
+                        </div>
+                        <img class="feature-card__img" src="./assets/images/icon-supervisor.svg" alt="">
+                    </article>
+                    <article class="feature-card flex" data-direction="column">
+                        <div class="feature-card__border bg-red"></div>
+                        <div>
+                            <h2 class="feature-card__title">Team Builder</h2>
+                            <p>Scans our talent network to create the optimal team for your project</p>
+                        </div>
+                        <img class="feature-card__img" src="./assets/images/icon-team-builder.svg" alt="">
+                    </article>
+                    <article class="feature-card flex" data-direction="column">
+                        <div class="feature-card__border bg-orange"></div>
+                        <div >
+                            <h2 class="feature-card__title">Karma</h2>
+                            <p>Regularly evaluates our talent to ensure quality</p>
+                        </div>
+                        <img class="feature-card__img" src="./assets/images/icon-karma.svg" alt="">
+                    </article>
+                    <article class="feature-card flex" data-direction="column">
+                        <div class="feature-card__border bg-blue"></div>
+                        <div >
+                            <h2 class="feature-card__title">Calculator</h2>
+                            <p>Uses data from past projects to provide better delivery estimates</p>
+                        </div>
+                        <img class="feature-card__img" src="./assets/images/icon-calculator.svg" alt="">
+                    </article>
+                </div>
+
+            </section>
+        </main>
+        
+        <footer class="attribution">
+            <p>
+                Challenge by
+                <a
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    >Frontend Mentor</a
+                >. Coded by
+                <a
+                    href="https://github.com/sprees"
+                    target="_blank"
+                    >Sprees</a
+                >.
+            </p>
+        </footer>
+    </body>
+</html>
