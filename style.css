@@ -136,6 +136,7 @@
     }
     
     section {
+        min-height: inherit;
         padding-block: 4rem;
         @media (min-width: 48em) {
             padding-block: 0;
