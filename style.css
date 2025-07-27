@@ -123,7 +123,6 @@
     }
 
     body {
-        position: relative;
         font-family: "Poppins Regular", sans-serif;
         font-size: var(--fs-300);
         color: var(--clr-neutral-400);
@@ -132,6 +131,7 @@
     }
 
     main {
+        position: relative;
         min-height: inherit;
     }
     
